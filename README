@@ -6,12 +6,15 @@ https://www.kaggle.com/gpiosenka/100-bird-species. The application was created u
 PyQt5, Qt Designer, TensorFlow, and PyCharm.
 
 GETTING STARTED:
-The neural network model exceeds the file size limitations for GitHub, so first you need to download
+The neural network model exceeds the file size limitations for GitHub, so you first need to download
 the published release of the application, along with the file included with the release:
 "variables.data-00000-of-00001". Place this file inside the folder titled "variables", which is
-itself inside the project folder "bird_id_cnn". Finally, to install the project dependencies, input
+itself inside the project folder "bird_id_cnn". Next, to install the project dependencies, input
 the following command into your IDE's terminal:
+
 "pip -r requirements.txt"
+
+Finally, run main.py to start the application.
 
 SPECIES IDENTIFICATION:
 Running the application will open the main window where user images can be uploaded, and species
