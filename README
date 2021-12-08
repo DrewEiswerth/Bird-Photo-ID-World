@@ -1,31 +1,27 @@
 OVERVIEW:
 Bird Photo ID: World is an application that uses a trained neural network model to make
-predictions about the bird species depicted in user submitted images. The neural network model     l
-has been trained to identify 285 bird species using a public domain dataset available
-at https://www.kaggle.com/gpiosenka/100-bird-species. The application was created using
-Python 3.9, PyQt5, Qt Designer, TensorFlow, and PyCharm.
+predictions about the bird species depicted in user submitted images. The neural network model has
+been trained to identify 285 bird species using a public domain dataset available at
+https://www.kaggle.com/gpiosenka/100-bird-species. The application was created using Python 3.9,
+PyQt5, Qt Designer, TensorFlow, and PyCharm.
 
 GETTING STARTED:
 The neural network model exceeds the file size limitations for GitHub, so first you need to download
 the published release of the application, along with the file included with the release:
 "variables.data-00000-of-00001". Place this file inside the folder titled "variables", which is
-itself inside the project folder "bird_id_cnn".
-
-Next, to install the project dependencies, input the following command into your IDE's terminal:
-
-pip -r requirements.txt
-
-Finally, run the program.
+itself inside the project folder "bird_id_cnn". Finally, to install the project dependencies, input
+the following command into your IDE's terminal:
+"pip -r requirements.txt"
 
 SPECIES IDENTIFICATION:
 Running the application will open the main window where user images can be uploaded, and species
 predictions can be made. First, drag-and-drop an image into the Start box, or click the
-"Select Photo" button beneath the box to browse your local files for an image. Once an image has
-been uploaded, click the "Identify!" button at the bottom of the Start box. This will allow the
-image to be analyzed by the neural network model, and result in species predictions filling the Best Match and
-Possible Matches boxes, and a pie chart filling the Probability box based on the confidence scores
-assigned to each species prediction by the neural network model. After the predictions have been made
-a user feedback question will appear beneath the bird image in the Best Match box asking "Is this
-your bird?" along with two buttons "YES" and "NO". To perform an identification on a different image,
-simply drag-and-drop another image into the Start box, or use the "Select Photo" button again and upload
-a new image.
+"Select Photo" button at the bottom of the box to browse your local files for an image. Once an
+image has been uploaded, click the "Identify!" button at the bottom of the Start box. This will
+allow the the neural network model to analyze the image, and will result in species predictions
+filling the Best Match and Possible Matches boxes, and a pie chart filling the Probability box based
+on the confidence scores assigned to each species prediction by the neural network model. After the
+predictions have been made a user feedback question will appear beneath the bird image in the
+Best Match box asking "Is this your bird?" along with two buttons "YES" and "NO". To perform an
+identification on a different image, simply drag-and-drop another image into the Start box, or click
+the "Select Photo" button again and upload a new image.
