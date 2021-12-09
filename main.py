@@ -17,7 +17,6 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
 
         self.current_index = -1           # will hold database index of the current identification
-        # self.datasource = datasource
         self.current_file_path = ""       # will save path to selected image on user's machine, needed for CNN analysis
         self.bird_id_model = keras.models.load_model("bird_id_cnn")
         self.bird_dict = {}
@@ -750,35 +749,6 @@ class MainWindow(QMainWindow):
                     self.db_connection.rollback()
                     print("ERROR: {}".format(sql_error2))
 
-        # try:
-        #     cursor = self.db_connection.cursor()
-        #
-        #     # lock to ensure that when row is added, that same row's id is retrieved
-        #     cursor.execute("LOCK TABLES identification_log WRITE;")
-        #
-        #     sql = "INSERT INTO identification_log " \
-        #           "VALUES(default, \"" + first_prediction_name + "\", " + str(first_prediction_percentage) + ", NOW(), \"NONE\");"
-        #
-        #     cursor.execute(sql)
-        #
-        #     cursor.execute("SELECT MAX(id) "
-        #                    "FROM identification_log;")
-        #
-        #     max_results = cursor.fetchall()
-        #
-        #     # retrieve the row's id and save in case user feedback is given
-        #     for row in max_results:
-        #         self.current_index = row[0]
-        #
-        #     cursor.execute("UNLOCK TABLES;")
-        #
-        #     self.db_connection.commit()
-        #     cursor.close()
-        #
-        # except mysql.connector.Error as sql_error:
-        #     self.db_connection.rollback()
-        #     print("ERROR: {}".format(sql_error))
-
         # moves label to reveal feedback question and buttons, and ensures label text is blank and background transparent
         self.appearing_label.setText("")
         self.appearing_label.setStyleSheet("background-color: transparent;\n"
@@ -839,15 +809,6 @@ class MainWindow(QMainWindow):
 
             except mysql.connector.Error as no_error:
                 print("ERROR: {}".format(no_error))
-
-    # def closeEvent(self, event):
-    #
-    #     self.db_connection.close()
-    #
-    #     if self.db_connection.is_closed():
-    #         print("Database connection closed.")
-    #
-    #     event.accept()
 
 
 if __name__ == "__main__":
